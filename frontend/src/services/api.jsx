@@ -38,15 +38,15 @@ api.interceptors.request.use((config) => {
     return Promise.reject(error);
 });
 
-
 export const taskAPI = {
     getTasks: () => api.get('/tasks/'),
     createTask: (taskData) => api.post('/tasks/', taskData),
     updateTask: (taskId, taskData) => api.put(`/tasks/${taskId}/`, taskData),
     deleteTask: (taskId) => api.delete(`/tasks/${taskId}/`),
-    login: (credentials) => axios.post(`${getApiBaseUrl()}/api/token/`, credentials),
-    register: (userData) => api.post('/api/user/register/', userData),
+    login: (credentials) => axios.post(`${getApiBaseUrl()}/token/`, credentials),
+    register: (userData) => api.post('/register/', userData), // Make sure no extra lines are here!
 };
+
 
 export default api;
 
