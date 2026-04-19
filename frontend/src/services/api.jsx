@@ -5,14 +5,11 @@ import Register from '../components/Register';
 
 console.log("Current API Base URL:", getApiBaseUrl());
 
-
 const getApiBaseUrl = () => {
     if (import.meta.env.PROD) {
-        // If VITE_API_URL is missing in Vercel, this will be undefined
-        // leading to a blank/failed request.
-        return import.meta.env.VITE_API_URL;
+        // Use environment variable or fallback to your Render backend URL
+        return import.meta.env.VITE_API_URL || 'https://tkmanager-1.onrender.com';
     }
-    // Fixed the local IP address
     return 'http://127.0.0.1:8000';
 };
 

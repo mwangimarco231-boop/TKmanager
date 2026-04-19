@@ -6,6 +6,12 @@ import { taskAPI } from './services/api';
 import Register from './components/Register';
 import './App.css';
 
+
+console.log("Environment:", import.meta.env.MODE);
+console.log("VITE_API_URL:", import.meta.env.VITE_API_URL);
+console.log("Final API URL:", getApiBaseUrl());
+
+
 function App() {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
